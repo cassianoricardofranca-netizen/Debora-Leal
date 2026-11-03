@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Débora Leal | Consultoria Empresarial, FP&A e BPO Financeiro</title>
+  <meta name="description" content="Consultoria empresarial em FP&A, controladoria, orçamento, planejamento tributário, BPO Financeiro e recrutamento de tecnologia.">
+  <meta name="theme-color" content="#102a43">
+
+  <!-- O arquivo do logo deve ficar na mesma pasta do index.html -->
+  <link rel="icon" type="image/png" href="./logodeboraleal.png">
+
+  <style>
+    :root {
+      --navy: #102a43;
+      --navy-light: #173f63;
+      --blue: #226092;
+      --gold: #c99a37;
+      --gold-light: #e3bf68;
+      --white: #fff;
+      --background: #f5f7fa;
+      --text: #253746;
+      --muted: #607080;
+      --border: #e3e9ef;
+      --shadow: 0 12px 35px rgba(16, 42, 67, .09);
+      --radius: 18px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--background);
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* Navegação */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16, 42, 67, .97);
+      border-bottom: 1px solid rgba(201, 154, 55, .3);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 750;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(227, 191, 104, .7);
+      border-radius: 12px;
+      color: var(--gold-light);
+      font-size: .9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #e1e9f0;
+      font-size: .9rem;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 9px;
+      padding: 8px 12px;
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    /* Botões */
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 22px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button-primary {
+      color: var(--navy);
+      background: var(--gold-light);
+    }
+
+    .button-primary:hover { background: #efd58e; }
+
+    .button-outline {
+      color: var(--white);
+      border-color: rgba(227, 191, 104, .8);
+      background: transparent;
+    }
+
+    .button-outline:hover { background: rgba(255, 255, 255, .08); }
+
+    /* Abertura */
+    .hero {
+      overflow: hidden;
+      padding: 82px 0;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 18%, rgba(201, 154, 55, .2), transparent 30%),
+        linear-gradient(130deg, var(--navy), var(--navy-light));
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 6px 13px;
+      border: 1px solid rgba(227, 191, 104, .6);
+      border-radius: 999px;
+      color: var(--gold-light);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    .hero h1 {
+      margin-bottom: 12px;
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .hero-subtitle {
+      margin-bottom: 18px;
+      color: #d8e3ed;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin-bottom: 0;
+      color: #e9eff5;
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .logo-panel {
+      display: grid;
+      min-height: 300px;
+      place-items: center;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, .6);
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .22);
+    }
+
+    .logo-panel img {
+      width: min(100%, 470px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Seções gerais */
+    .section { padding: 78px 0; }
+    .section-white { background: var(--white); }
+
+    .section-heading { margin-bottom: 34px; }
+
+    .section-heading h2 {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      line-height: 1.2;
+      letter-spacing: -.025em;
+    }
+
+    .section-heading h2::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 54px;
+      height: 4px;
+      border-radius: 4px;
+      background: var(--gold);
+      content: "";
+    }
+
+    .section-heading p {
+      max-width: 740px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .about-copy p { color: var(--muted); }
+
+    .highlight-box {
+      padding: 28px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-box h3 {
+      margin-bottom: 14px;
+      color: var(--gold-light);
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 25px;
+      color: #e8eef4;
+    }
+
+    .check-list li::before {
+      position: absolute;
+      left: 0;
+      color: var(--gold-light);
+      font-weight: 800;
+      content: "✓";
+    }
+
+    /* Perguntas e cartões */
+    .question-grid,
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .question {
+      padding: 20px;
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .card {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(16, 42, 67, .13);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+
+    .card p, .card li { color: var(--muted); }
+
+    .card ul {
+      display: grid;
+      gap: 6px;
+      padding-left: 19px;
+      margin: 0;
+      list-style: disc;
+    }
+
+    .card li { font-size: .94rem; }
+
+    /* Tech recruiting */
+    .recruiter-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      padding: clamp(26px, 5vw, 48px);
+      border-radius: 22px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      box-shadow: var(--shadow);
+    }
+
+    .recruiter-panel h2 {
+      margin-bottom: 14px;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+    }
+
+    .recruiter-panel h2 span { color: var(--gold-light); }
+    .recruiter-panel p { color: #e3ebf2; }
+
+    .recruiter-panel .check-list li { color: #f0f4f8; }
+
+    /* Projetos */
+    .project-period {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .project-focus {
+      margin: 14px 0 0;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      color: var(--navy) !important;
+      font-size: .92rem;
+    }
+
+    /* Linha do tempo */
+    .timeline {
+      display: grid;
+      gap: 22px;
+      max-width: 850px;
+      margin-left: 8px;
+      padding-left: 25px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .timeline-item { position: relative; }
+
+    .timeline-item::before {
+      position: absolute;
+      top: 7px;
+      left: -34px;
+      width: 15px;
+      height: 15px;
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      background: var(--navy);
+      content: "";
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 3px;
+      color: var(--navy);
+      font-size: 1.04rem;
+    }
+
+    .timeline-item p { margin: 0; color: var(--muted); }
+
+    /* Competências */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 8px 14px;
+      border: 1px solid rgba(201, 154, 55, .7);
+      border-radius: 999px;
+      color: var(--navy);
+      background: var(--white);
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    /* Etapas */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .step {
+      padding: 22px 17px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--white);
+      text-align: center;
+      box-shadow: var(--shadow);
+      counter-increment: step;
+    }
+
+    .step::before {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      color: var(--navy);
+      background: var(--gold-light);
+      font-weight: 800;
+      content: counter(step);
+    }
+
+    .step h3 { margin-bottom: 5px; color: var(--navy); font-size: 1rem; }
+    .step p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    /* Contato e rodapé */
+    .contact {
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(201, 154, 55, .18), transparent 30%),
+        linear-gradient(130deg, var(--navy), var(--navy-light));
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+    }
+
+    .contact-copy {
+      max-width: 660px;
+      margin: 0 auto 25px;
+      color: #e1e9f0;
+    }
+
+    .contact .hero-actions { justify-content: center; }
+
+    .contact-info {
+      margin-top: 28px;
+      color: #d6e0e9;
+      line-height: 2;
+    }
+
+    .contact-info a { color: var(--gold-light); font-weight: 700; }
+
+    .site-footer {
+      padding: 22px 0;
+      color: #b8c5d1;
+      background: #091b2b;
+      text-align: center;
+      font-size: .88rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .recruiter-panel { grid-template-columns: 1fr; }
+      .logo-panel { max-width: 520px; min-height: 240px; margin-inline: auto; }
+      .question-grid, .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .nav-links { gap: 14px; }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(100% - 32px, 1120px); }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links {
+        position: absolute;
+        top: 68px;
+        right: 0;
+        left: 0;
+        display: none;
+        padding: 14px 20px 20px;
+        background: var(--navy);
+        border-top: 1px solid rgba(255, 255, 255, .12);
+      }
+      .nav-links.is-open { display: grid; gap: 0; }
+      .nav-links a { display: block; padding: 11px 4px; }
+      .hero { padding: 56px 0 64px; }
+      .hero-grid { gap: 30px; }
+      .logo-panel { min-height: 190px; padding: 22px; }
+      .section { padding: 58px 0; }
+      .question-grid, .cards-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 420px) {
+      .steps { grid-template-columns: 1fr; }
+      .hero-actions .button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Débora Leal — início">
+        <span class="brand-mark" aria-hidden="true">DL</span>
+        <span>DÉBORA LEAL</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links" id="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#recrutamento">Tech Recruiting</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Consultoria empresarial</span>
+          <h1>Débora Leal</h1>
+          <p class="hero-subtitle">FP&A · BPO Financeiro · Controladoria · Tech Recruiter</p>
+          <p class="hero-copy">
+            Clareza financeira para decisões melhores e crescimento sustentável. Transformo
+            informações financeiras e operacionais em planejamento, acompanhamento e análises
+            práticas para apoiar as decisões do negócio.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contato">Fale comigo</a>
+            <a class="button button-outline" href="#projetos">Conheça os projetos</a>
+          </div>
+        </div>
+
+        <div class="logo-panel">
+          <img
+            src="./logodeboraleal.png"
+            alt="Logo Débora Leal — Consultoria Empresarial, FP&A e BPO Financeiro"
+            width="1382"
+            height="920"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Perfil profissional</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              Débora Leal atua em <strong>FP&A, controladoria, finanças, planejamento estratégico
+              e gestão de desempenho</strong>. Sua trajetória profissional inclui empresas de diferentes
+              portes e segmentos, como calçados, indústria têxtil, semicondutores, distribuição e tecnologia.
+            </p>
+            <p>
+              Apoia empresas na estruturação de processos financeiros e gerenciais, no planejamento
+              orçamentário e na transformação de dados em análises úteis para a tomada de decisão.
+            </p>
+            <p>
+              Seu trabalho combina visão estratégica e execução prática, com soluções ajustadas à
+              estrutura, às prioridades e aos objetivos de cada negócio.
+            </p>
+          </div>
+
+          <aside class="highlight-box">
+            <h3>Diferenciais</h3>
+            <ul class="check-list">
+              <li>Experiência em diferentes setores e modelos de negócio</li>
+              <li>Integração entre finanças, estratégia e operação</li>
+              <li>Atuação prática e orientada à execução</li>
+              <li>Informação financeira traduzida em análises gerenciais</li>
+              <li>Foco em planejamento, custos, margens e indicadores</li>
+              <li>Soluções alinhadas à realidade de cada empresa</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Decisões mais bem informadas</h2>
+          <p>A consultoria contribui para responder questões importantes da gestão:</p>
+        </div>
+
+        <ul class="question-grid">
+          <li class="question">Para onde o negócio está caminhando financeiramente?</li>
+          <li class="question">Quais áreas, produtos ou operações geram resultado?</li>
+          <li class="question">Onde há oportunidades de reduzir custos e melhorar margens?</li>
+          <li class="question">Como transformar metas em orçamento e planos de ação?</li>
+          <li class="question">Quais indicadores devem ser acompanhados pela liderança?</li>
+          <li class="question">Quais cenários devem ser avaliados antes de uma decisão?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Serviços</h2>
+          <p>Mais estrutura, visibilidade e consistência para a gestão financeira e o processo decisório.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>FP&A e planejamento financeiro</h3>
+            <ul>
+              <li>Planejamento financeiro alinhado aos objetivos</li>
+              <li>Orçamento empresarial e projeções</li>
+              <li>Forecast e análise de cenários</li>
+              <li>Acompanhamento do realizado versus planejado</li>
+              <li>Análise de viabilidade econômico-financeira</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>BPO Financeiro</h3>
+            <ul>
+              <li>Organização de rotinas financeiras</li>
+              <li>Apoio no controle de contas a pagar e a receber</li>
+              <li>Conciliação e organização de informações</li>
+              <li>Relatórios gerenciais para acompanhamento</li>
+              <li>Rotinas adaptadas às necessidades da empresa</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Orçamento e controladoria</h3>
+            <ul>
+              <li>Implantação ou revisão do processo orçamentário</li>
+              <li>Estruturação de centros de custo</li>
+              <li>Análise de custos e despesas</li>
+              <li>Orçamento base zero</li>
+              <li>Indicadores e acompanhamento gerencial</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Estratégia financeira e desempenho</h3>
+            <ul>
+              <li>Análise de custos, margens e resultados</li>
+              <li>Identificação de oportunidades de eficiência</li>
+              <li>Definição de metas e prioridades</li>
+              <li>Relatórios para gestores e stakeholders</li>
+              <li>Informações para decisões táticas e estratégicas</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Planejamento tributário</h3>
+            <ul>
+              <li>Comparação de cenários tributários</li>
+              <li>Avaliação de alternativas entre estados</li>
+              <li>Organização de informações para apoiar decisões</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Fluxo de caixa</h3>
+            <ul>
+              <li>Análise e planejamento de fluxo de caixa</li>
+              <li>Avaliação das necessidades financeiras</li>
+              <li>Acompanhamento da liquidez do negócio</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Projetos e processos</h3>
+            <ul>
+              <li>Mapeamento de processos e atividades</li>
+              <li>Organização de fluxos e responsabilidades</li>
+              <li>Acompanhamento de projetos</li>
+              <li>Estruturação de ferramentas e rotinas de gestão</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="recrutamento">
+      <div class="container">
+        <div class="recruiter-panel">
+          <div>
+            <h2>Tech <span>Recruiter</span></h2>
+            <p>
+              Apoio a empresas na atração e seleção de profissionais de tecnologia, conectando
+              as necessidades da vaga ao contexto, à equipe e aos objetivos do negócio.
+            </p>
+            <p>
+              A experiência em empresas de tecnologia contribui para aproximar as necessidades
+              da organização dos perfis profissionais buscados.
+            </p>
+          </div>
+          <ul class="check-list">
+            <li>Alinhamento do perfil da vaga com a empresa</li>
+            <li>Apoio em recrutamento e seleção de tecnologia</li>
+            <li>Triagem e avaliação de perfis profissionais</li>
+            <li>Apoio à organização do processo seletivo</li>
+            <li>Alinhamento de expectativas entre empresa e candidato</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Projetos em destaque</h2>
+          <p>Experiências em orçamento, planejamento tributário, indicadores, logística e gestão de projetos.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <span class="project-period">Jan/2022 – Out/2022</span>
+            <h3>Corello Calçados</h3>
+            <p><strong>Implementação do processo orçamentário.</strong> Análise da estrutura, organograma, atividades, fluxogramas, centros de custo, classificação de despesas e orçamento base zero.</p>
+            <p class="project-focus"><strong>Foco:</strong> estruturar o planejamento e o acompanhamento do orçamento.</p>
+          </article>
+
+          <article class="card">
+            <span class="project-period">Jan/2019 – Abr/2022</span>
+            <h3>Camaleoa Indústria Têxtil</h3>
+            <p><strong>Implementação do processo orçamentário.</strong> Análise da estrutura, centros de custo, orçamento base zero e modelagem do acompanhamento.</p>
+            <p class="project-focus"><strong>Foco:</strong> criar um processo de planejamento alinhado à operação.</p>
+          </article>
+
+          <article class="card">
+            <span class="project-period">Jan/2022 – Abr/2022</span>
+            <h3>Zenglein Calçados</h3>
+            <p><strong>Planejamento tributário.</strong> Comparação de cenários em diferentes estados brasileiros para apoiar a avaliação de alternativas.</p>
+            <p class="project-focus"><strong>Foco:</strong> apoiar decisões com uma análise estruturada de cenários.</p>
+          </article>
+
+          <article class="card">
+            <span class="project-period">Set/2016 – Set/2018</span>
+            <h3>Bebecê Calçados</h3>
+            <p><strong>Implementação do processo orçamentário.</strong> Análise de estrutura e processos, metas, custos, despesas e acompanhamento de resultados.</p>
+            <p class="project-focus"><strong>Foco:</strong> conectar metas, informações financeiras e gestão.</p>
+          </article>
+
+          <article class="card">
+            <h3>Imagine Arquitetura</h3>
+            <p><strong>Acompanhamento de projetos.</strong> Organização do acompanhamento no Trello e implantação do sistema DOIT.</p>
+            <p class="project-focus"><strong>Foco:</strong> aumentar a organização e a visibilidade das iniciativas.</p>
+          </article>
+
+          <article class="card">
+            <h3>Via Uno</h3>
+            <p><strong>BID de logística.</strong> Avaliação de oportunidades relacionadas aos custos de frete.</p>
+            <p class="project-focus"><strong>Foco:</strong> comparar alternativas logísticas e analisar custos.</p>
+          </article>
+
+          <article class="card">
+            <h3>CFC Valderez</h3>
+            <p><strong>Indicadores de gestão.</strong> Mapeamento e acompanhamento de indicadores de combustível por veículo, aprovação e desempenho dos alunos.</p>
+            <p class="project-focus"><strong>Foco:</strong> acompanhar a operação por meio de indicadores relevantes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="experiencia">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Experiência profissional</h2>
+          <p>Atuação em finanças, planejamento, controladoria e gestão.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Head de FP&A, Controladoria, Financeiro e Jurídico</h3>
+            <p>Growdev</p>
+          </article>
+          <article class="timeline-item">
+            <h3>FP&A Manager e consultora empresarial</h3>
+            <p>Consultoria empresarial</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Especialista em Controladoria</h3>
+            <p>HT Micron Semicondutores S.A.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Gerente Financeira</h3>
+            <p>França Distribuidora Ltda.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Coordenadora de Controladoria</h3>
+            <p>Arezzo&Co</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Analista de Controladoria e Planejamento Estratégico</h3>
+            <p>Arezzo&Co</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Analista Contábil</h3>
+            <p>Arezzo&Co</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Analista Contábil</h3>
+            <p>Orplan</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Analista Contábil</h3>
+            <p>MGM Auditores e Contadores</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Formação e competências</h2>
+          <p>
+            Formação e desenvolvimento em instituições como FGV, Unisinos, Universidade FUMEC e Growdev.
+            Idioma informado: inglês.
+          </p>
+        </div>
+
+        <div class="tags">
+          <span class="tag">FP&A</span>
+          <span class="tag">BPO Financeiro</span>
+          <span class="tag">Controladoria</span>
+          <span class="tag">Planejamento Estratégico</span>
+          <span class="tag">Orçamento</span>
+          <span class="tag">Forecast</span>
+          <span class="tag">Fluxo de Caixa</span>
+          <span class="tag">Custos e Margens</span>
+          <span class="tag">Indicadores</span>
+          <span class="tag">Gestão de Projetos</span>
+          <span class="tag">Metodologias Ágeis</span>
+          <span class="tag">Liderança de Equipes</span>
+          <span class="tag">Tech Recruiting</span>
+          <span class="tag">Report ao Mercado</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Como funciona o trabalho</h2>
+          <p>O escopo é definido conforme as prioridades, a estrutura e os objetivos de cada cliente.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Entendimento</h3>
+            <p>Necessidades e contexto da empresa.</p>
+          </article>
+          <article class="step">
+            <h3>Análise</h3>
+            <p>Informações, estrutura e processos atuais.</p>
+          </article>
+          <article class="step">
+            <h3>Desenho</h3>
+            <p>Solução e definição das prioridades.</p>
+          </article>
+          <article class="step">
+            <h3>Implementação</h3>
+            <p>Processos, ferramentas e indicadores.</p>
+          </article>
+          <article class="step">
+            <h3>Acompanhamento</h3>
+            <p>Resultados e aprimoramento da gestão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Para quem é</h2>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card"><p>Empresas que desejam implantar ou aprimorar o processo orçamentário.</p></article>
+          <article class="card"><p>Negócios que precisam de visibilidade sobre custos, despesas e resultados.</p></article>
+          <article class="card"><p>Organizações que querem fortalecer a controladoria e o acompanhamento gerencial.</p></article>
+          <article class="card"><p>Gestores que buscam indicadores para apoiar decisões.</p></article>
+          <article class="card"><p>Empresas que precisam avaliar cenários financeiros ou tributários.</p></article>
+          <article class="card"><p>Empresas que buscam apoio na organização de rotinas financeiras ou recrutamento de tecnologia.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="container">
+        <h2>Vamos conversar?</h2>
+        <p class="contact-copy">
+          Vamos estruturar uma gestão mais clara, consistente e alinhada aos objetivos do seu negócio.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:leal.p.debora@outlook.com">Enviar e-mail</a>
+          <a
+            class="button button-outline"
+            href="https://www.linkedin.com/in/dlealassessoria/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn</a>
+        </div>
+
+        <div class="contact-info">
+          <strong>Débora Leal</strong><br>
+          Consultoria Empresarial · FP&A · BPO Financeiro · Tech Recruiter<br>
+          <a href="mailto:leal.p.debora@outlook.com">leal.p.debora@outlook.com</a><br>
+          Campo Bom, Rio Grande do Sul, Brasil
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="year"></span> Débora Leal. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuButton = document.querySelector(".menu-toggle");
+    const menu = document.getElementById("menu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("is-open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+</body>
+</html>
